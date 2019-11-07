@@ -6,6 +6,6 @@ eureka:
   client:
     serviceUrl:
       #注册中心地址
-      defaultZone: http://pengq.eureka1:8081/eureka/,http://pengq.eureka2:8082/eureka/,http://pengq.eureka3:8083/eureka/
+      defaultZone: http://localhost:8080/eureka/
 server:
   port: 8084
