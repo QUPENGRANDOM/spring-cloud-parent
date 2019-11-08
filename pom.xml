@@ -6,6 +6,8 @@
         <module>spring-cloud-eureka-server</module>
         <module>spring-cloud-eureka-client</module>
         <module>spring-cloud-config-server</module>
+        <module>spring-cloud-gateway</module>
+        <module>spring-cloud-admin-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -67,9 +69,29 @@
 
     <repositories>
         <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
+            <id>spring-milestone</id>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <url>http://repo.spring.io/milestone</url>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <url>http://repo.spring.io/snapshot</url>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </repository>
     </repositories>
 </project>

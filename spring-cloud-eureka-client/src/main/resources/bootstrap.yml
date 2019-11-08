@@ -1,0 +1,22 @@
+spring:
+  application:
+    #服务名
+    name: eureka-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: user-center
+      profile: ${spring.profiles.active}-config
+  profiles:
+    active: pro
+eureka:
+  client:
+    serviceUrl:
+      #注册中心地址
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 8084
+  servlet:
+    context-path: /admin
