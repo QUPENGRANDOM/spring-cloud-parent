@@ -14,4 +14,11 @@ spring:
           uri: lb://eureka-client #此处需要使用lb协议
           predicates:
             - Path=/admin/**
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

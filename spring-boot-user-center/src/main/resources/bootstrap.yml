@@ -1,0 +1,36 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /user-center
+spring:
+  application:
+    name: user-center
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: user-center
+      profile: ${spring.profiles.active}-config
+  profiles:
+    active: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    metadata-map:
+      management:
+        context-path: ${server.servlet.context-path}/actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+logging:
+  file:
+    name: ./logs/${spring.application.name}.log

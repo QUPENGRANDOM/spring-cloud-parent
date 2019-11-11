@@ -1,4 +1,4 @@
-package com.pengq.eureka.client.controller;
+package com.pengq.user.center.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
