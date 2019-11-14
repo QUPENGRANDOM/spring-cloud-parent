@@ -21,7 +21,7 @@ public class MessageGenerate {
 
     private AtomicInteger index = new AtomicInteger();
 
-    @Scheduled(cron = "0 0/1 * * * ?")
+    @Scheduled(cron = "*/1 * * * * ?")
     public void sendMessage() {
         logger.info("scheduled running...");
         simpMessagingTemplate.convertAndSend("/notice", index.getAndAdd(1));

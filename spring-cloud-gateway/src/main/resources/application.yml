@@ -10,10 +10,20 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: route_path
-          uri: lb://eureka-client #此处需要使用lb协议
+        - id: route_ws_path
+          uri: lb://user-center #此处需要使用lb协议
           predicates:
-            - Path=/admin/**
+            - Path=/user-center/messages/info/**
+
+        - id: route-websocket
+          uri: lb:ws://user-center
+          predicates:
+            - Path=/user-center/messages/**
+
+        - id: route_user_center_path
+          uri: lb://user-center #此处需要使用lb协议
+          predicates:
+            - Path=/user-center/**
 management:
   endpoints:
     web:
