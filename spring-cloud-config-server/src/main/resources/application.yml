@@ -1,0 +1,28 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8081
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          force-pull: true
+          password: ''
+          refreshRate: 10000
+          searchPaths: '{application}/pro,{application}/dev'
+          uri: https://github.com/QUPENGRANDOM/spring-config-file.git
+          username: ''

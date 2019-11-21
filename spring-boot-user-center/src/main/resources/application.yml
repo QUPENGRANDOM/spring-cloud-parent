@@ -1,0 +1,18 @@
+plot:
+  process:
+    plot-phases:
+      - id: 1
+        last-phase: false
+        name: 精标
+        revert: false
+        uniqueKey: aad
+      - id: 1
+        last-phase: false
+        name: 复核
+        revert: true
+        uniqueKey: adadadafaf
+      - id: 1
+        last-phase: true
+        name: 完成
+        revert: false
+        uniqueKey: wwewrtqr
